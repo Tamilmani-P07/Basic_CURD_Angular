@@ -1,0 +1,28 @@
+<h2>Book List</h2>
+<table class="table table-striped">
+    <thead>
+        <th>Select</th>
+        <th>Book Name</th>
+        <th>Author Name</th>
+        <th>Category</th>
+        <!-- <th>Action</th> -->
+    </thead>
+    <tbody>
+        <tr *ngFor = "let book of books">
+            <td><input type="radio" name="selectedBook" (click)="selectedId(book.id)" [value]="book.id"></td>
+            <td>{{book.name}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.category}}</td>
+            <!-- <td>
+                <button (click) ="updateBook(book.id)" class="btn btn-info">Update</button>
+                <button (click) ="deleteBook(book.id)" class="btn btn-danger">Delete</button>
+            </td> -->
+        </tr>
+      
+    </tbody>
+   
+</table>
+<div class="col-auto">
+      <button (click) ="updateBook()" class="btn btn-info float-right">Update</button>
+      <button (click) ="deleteBook()" class="btn btn-danger float-right">Delete</button>
+</div>
